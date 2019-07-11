@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+        {% block content %}
+        {% load static %}
+
+        <!--  HOME 2 BANNER BLOCK  -->
+
+        <section class="section-banner">
+
+            <div class="container wow fadeInUp">
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <div class="banner-content">
+                            <h2>
+                                Donate blood and get real blessings.
+                            </h2>					
+                            <h3>Blood is the most precious gift that anyone can give to another person.<br>
+                                Donating blood not only saves the life also save donor's lives.
+                            </h3>
+
+                            <!-- <a href="#" class="btn btn-slider">GET APPOINTMENT</a>    -->
+                        </div>
+                    </div> <!-- end .col-md-12  -->
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="cta-section-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                            <h2>We are helping people</h2>
+                            <p>
+                                You can give blood at any of our blood donation venues. We have total sixty thousands donor centers and visit thousands of other venues on various occasions.                            
+                            </p>
+                            <a class="btn btn-cta-2" href="{% url 'donor_reg' %}">BECOME DONOR</a>
+                        </div> <!--  end .col-md-8  -->
+                    </div> <!--  end .row  -->
+                </div>
+            </section> 
+    
+
+        <!--  SECTION DONATION PROCESS -->
+
+        <section class="section-content-block section-process">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h2 class="section-heading"><span>Donation</span> Process</h2>
+                        <p class="section-subheading">The donation process from the time you arrive center until the time you leave</p>
+                    </div> <!-- end .col-sm-10  -->                    
+
+                </div> <!--  end .row  -->
+
+                <div class="row wow fadeInUp">
+
+                    <div class="col-lg-4 col-md-offset-0 col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12">
+
+                        <div class="process-layout">
+
+                            <figure class="process-img">
+
+                                <img src="{% static 'images/process_1.jpg' %}" alt="service" />
+                                <div class="step">
+                                    <h3>1</h3>
+                                </div>
+                            </figure> <!-- end .cause-img  -->
+
+                            <article class="process-info">
+                                <h2>Registration</h2>   
+                                <p>You need to complete a very simple registration form. Which contains all required contact information to enter in the donation process.</p>
+                            </article>
+
+                        </div> <!--  end .process-layout -->
+
+                    </div> <!--  end .col-lg-3 -->
+
+
+
+                    <div class="col-lg-4 col-md-offset-0 col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12">
+
+                        <div class="process-layout">
+
+                            <figure class="process-img">
+                                <img src="{% static 'images/process_2.jpg' %}" alt="process" />
+                                <div class="step">
+                                    <h3>2</h3>
+                                </div>
+                            </figure> <!-- end .cau<h5 class="step">1</h5>se-img  -->
+
+                            <article class="process-info">                                   
+                                <h2>Screening</h2>
+                                <p>A drop of blood from your finger will take for simple test to ensure that your blood iron levels are proper enough for donation process.</p>
+                            </article>
+
+                        </div> <!--  end .process-layout -->
+
+                    </div> <!--  end .col-lg-3 -->
+
+
+                    <div class="col-lg-4 col-md-offset-0 col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12">
+
+                        <div class="process-layout">
+
+                            <figure class="process-img">
+                                <img src="{% static 'images/process_3.jpg' %}" alt="process" />
+                                <div class="step">
+                                    <h3>3</h3>
+                                </div>
+                            </figure> <!-- end .cause-img  -->
+
+                            <article class="process-info">
+                                <h2>Donation</h2>
+                                <p>After ensuring and passed screening test successfully you will be directed to a donor bed for donation. It will take only 6-10 minutes.</p>
+                            </article>
+
+                        </div> <!--  end .process-layout -->
+
+                    </div> <!--  end .col-lg-3 -->
+
+                </div> <!--  end .row --> 
+
+            </div> <!--  end .container  -->
+
+        </section> <!--  end .section-process -->
+
+        
+        {% endblock content %}
+        

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+        {% block content %}
+        {% load static %}
+        {% load widget_tweaks %}
+
+<section class="section-appointment">
+
+    <div class="container wow fadeInUp">
+
+        <div class="row" style="padding-top: 50px">
+    
+            <div class="col-md-12 col-sm-12 text-center">
+                <h2 class="section-heading"><span>Donor</span> Registration</h2>
+                <p class="section-subheading">Be a part of a noble cause.</p>
+            </div> <!-- end .col-sm-10  -->                    
+
+        </div> <!--  end .row  -->
+
+        <div class="row">
+
+            <div class="col-lg-6 col-md-6 hidden-sm hidden-xs"> 
+
+                <figure class="appointment-img" style="margin-top:200px">
+                    <img src="{% static 'images/event_4.jpg' %}" alt="appointment image" style="margin-top:200px">
+                </figure>
+            </div> <!--  end col-lg-6  -->
+
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
+
+                <div class="appointment-form-wrapper text-center clearfix">
+                    <h3 class="join-heading">Donor Registration</h3>
+                    <form class="appoinment-form" method = "post">
+                            {% csrf_token %} 
+                        <div class="form-group col-md-6">
+                                {{ form.username|add_class:"form-control"|attr:"placeholder:Enter Adhaar Number" }}
+                        </div>
+                        <div class="form-group col-md-6" type = "date">
+                                {{ form.password1|add_class:"form-control"|attr:"placeholder:Password"}}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class = select-style>
+                                {{ form.password2|add_class:"form-control"|attr:"placeholder:Confirm Password" }}
+                            </div>
+                        </div>                                                       
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <button id="btn_submit" class="btn-submit" type="submit">Next</button>
+                        </div>
+
+                    </form>
+
+                </div> <!-- end .appointment-form-wrapper  -->
+
+            </div> <!--  end .col-lg-6 -->
+
+        </div> <!--  end .row  -->
+
+    </div> <!--  end .container -->
+
+</section>  <!--  end .appointment-section  -->
+{% endblock content %}

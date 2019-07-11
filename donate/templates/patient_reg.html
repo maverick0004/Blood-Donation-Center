@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+        {% block content %}
+        {% load static %}
+        {% load widget_tweaks %}
+
+<section class="section-appointment">
+
+    <div class="container wow fadeInUp">
+
+            <div class="row">
+    
+                    <div class="col-md-12 col-sm-12 text-center" style="padding-top: 50px">
+                        <h2 class="section-heading"><span>Patient's</span> Request</h2>
+                        <p class="section-subheading">If in need of blood, we got you covered.</p>
+                    </div> <!-- end .col-sm-10  -->                    
+
+                </div> <!--  end .row  -->
+
+        <div class="row">
+
+            <div class="col-lg-6 col-md-6 hidden-sm hidden-xs"> 
+
+                <figure class="appointment-img">
+                    <img src="{% static 'images/appointment.jpg' %}" alt="appointment image">
+                </figure>
+            </div> <!--  end col-lg-6  -->
+
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
+
+                <div class="appointment-form-wrapper text-center clearfix">
+                    <h3 class="join-heading">Request Blood</h3>
+                    <form class="appoinment-form" method = "post">
+                            {% csrf_token %} 
+                        <div class="form-group col-md-6">
+                                {{ form.name|add_class:"form-control"|attr:"placeholder:Name" }}
+                        </div>
+                        <div class="form-group col-md-6" type = "date">
+                                {{ form.dob|add_class:"form-control"|attr:"placeholder:Date of Birth"|attr:"type:date" }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class = select-style>
+                                {{ form.gender|add_class:"form-control"|attr:"placeholder:Gender" }}
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                                <div class = select-style>
+                                        {{ form.blood_group|add_class:"form-control"|attr:"placeholder:Blood Group" }}
+                                    </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                                {{ form.disease|add_class:"form-control"|attr:"placeholder:Disease" }}
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                                {{ form.contact_no|add_class:"form-control"|attr:"placeholder:Contact Number" }}
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                {{ form.address|add_class:"form-control"|attr:"placeholder:Address" }}
+                        </div>                                                          
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <button id="btn_submit" class="btn-submit" type="submit">Get Appointment</button>
+                        </div>
+
+                    </form>
+
+                </div> <!-- end .appointment-form-wrapper  -->
+
+            </div> <!--  end .col-lg-6 -->
+
+        </div> <!--  end .row  -->
+
+    </div> <!--  end .container -->
+
+</section>  <!--  end .appointment-section  -->
+{% endblock content %}

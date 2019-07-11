@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+    </head>
+        <body>
+            {% block content %}
+<div class="wrap">
+    <form action="" method="post">
+        {% csrf_token %}
+      <div class="fields"> Username <br><br> {{ form.username }}</div>
+      <div class="fields"> Password <br><br> {{ form.password }}</div>
+      <input class="button-custom" type="submit" value="LOGIN">
+    </form>
+  </div>
+{% endblock content %}
+        </body>
+</html>

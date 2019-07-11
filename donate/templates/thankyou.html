@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+        {% block content %}
+        {% load static %}
+        <section class="section-appointment">
+
+            <div class="container wow fadeInUp">
+        
+                <div class="row">
+        
+                    <div class="col-lg-6 col-md-6 hidden-sm hidden-xs"> 
+        
+                        <!-- <figure class="appointment-img"> -->
+                            <img src="{% static 'images/doctor-img2.png' %}" alt="appointment image">
+                        <!-- </figure> -->
+                    </div> <!--  end col-lg-6  -->
+        
+        
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
+        
+                        <div class="appointment-form-wrapper text-center clearfix">
+                            <h3>Thank you for your request. We'll get back to you soon.</h3>
+                        </div> <!-- end .appointment-form-wrapper  -->
+        
+                    </div> <!--  end .col-lg-6 -->
+        
+                </div> <!--  end .row  -->
+        
+            </div> <!--  end .container -->
+        
+        </section>  <!--  end .appointment-section  -->
+        {% endblock content %}

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Blood Donation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Blood Donation - Activism & Campaign HTML5 Template">
+        <meta name="author" content="aayush">
+        {% load static %}
+        {% load widget_tweaks %}
+        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" >
+        <link href="{% static 'css/animate.css' %}"rel="stylesheet" type="text/css" >
+        <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css" >
+        <link href="{% static 'css/venobox.css' %}" rel="stylesheet" type="text/css" >
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <body> 
+        
+        <div id="preloader">
+            <span class="margin-bottom"><img src="{% static 'images/loader.gif' %}" alt="" /></span>
+        </div>
+
+        <header class="main-header clearfix">
+
+            <div class="top-bar clearfix">
+
+                <div class="container">
+
+                    <div class="row" style = "text-align: center">
+
+                        
+
+                        <p>Welcome to blood donation center</p>
+
+                    </div>
+
+                </div>
+
+            </div> 
+
+            <section class="header-wrapper navgiation-wrapper">
+
+                <div class="navbar navbar-default">			
+                    <div class="container">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="logo" href="{% url 'home' %}"><img alt="" src="{% static 'images/logo.png' %}"></a>
+                        </div>
+
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="{% url 'home' %}" title="Home">Home</a>
+                                </li>
+                                <li><a href="{% url 'patient_reg' %}" title="Patient">Request Blood</a></li>
+                                <li><a href="{% url 'view_donor' %}" title="Blood Banks">Blood Banks</a></li>
+                                <li><a data-toggle = "modal" href="#loginmodal" title="Login">Donor Login</a></li>
+                                <li><a href="{% url 'admin:index' %}" title="Admin">Admin</a></li>
+                                 
+                            
+
+                                <!-- <li>
+                                    <a href="#">Campaign</a>
+                                    <ul class="drop-down">
+                                        <li><a href="events.html">All Campaigns</a></li>
+                                        <li><a href="event-single.html">Single Campaign</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="drop"><a href="#">Pages</a>
+                                    <ul class="drop-down">
+
+
+                                        <li><a href="faq.html" title="FAQ">FAQ</a></li>
+                                        <li class="drop"><a href="#">Gallery</a>
+                                            <ul class="drop-down level3">
+                                                <li><a href="gallery-1.html">Layout 01</a></li> 
+                                                <li><a href="gallery-2.html">Layout 02</a></li> 
+
+                                            </ul>
+                                        </li>
+                                        <li><a href="404.html" title="404 Page">404 Page</a></li> 
+                                        <li class="drop"><a href="#">Level 3</a>
+                                            <ul class="drop-down level3">
+                                                <li><a href="#">Level 3.1</a></li>
+                                                <li><a href="#">Level 3.2</a></li>
+                                                <li><a href="#">Level 3.3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Blog</a>
+                                    <ul class="drop-down">
+                                        <li><a href="blog.html">All Posts</a></li> 
+                                        <li><a href="single.html">Single Page</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="contact.html">Contact</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            
+
+        </header> <!-- end main-header  -->
+        <div class = "modal fade" id="loginmodal">
+            <div class = "modal-dialog">
+                <div class = "modal-content" style="border:none">
+                                <div class="appointment-form-wrapper text-center clearfix" style="margin-top:0px">
+                                    <h3 class="join-heading">Donor Login</h3>
+                                    <form class="appoinment-form" method = "post">
+                                            {% csrf_token %} 
+                                        <div class="form-group col-md-6">
+                                                {{ form.username|add_class:"form-control"|attr:"placeholder:user name" }}
+                                        </div>
+                                        <div class="form-group col-md-6" type = "date">
+                                                {{ form.password|add_class:"form-control"|attr:"placeholder:password" }}
+                                        </div>
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12" style="margin-top:40px">
+                                            <button id="btn_submit" class="btn-submit" type="submit">Login</button>
+                                        </div>
+                
+                                    </form>
+                
+                                </div> <!-- end .appointment-form-wrapper  -->
+                </div>
+            </div>
+        </div>
+        {% block content %} 
+
+        {% endblock content %}
+    
+
+        <!-- START FOOTER  -->
+
+        <footer>            
+
+            <section class="footer-widget-area footer-widget-area-bg">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="about-footer">
+
+                                <div class="row">
+
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                        <img src="{% static 'images/logo-footer.png' %}" alt="" />
+                                    </div> <!--  end col-lg-3-->
+
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                        <p>
+                                            We are world largest and trustful blood donation center. We have been working since 2019 with a prestigious vision to helping patient to provide blood.
+                                        </p>
+                                    </div> <!--  end .col-lg-9  -->
+
+                                </div> <!--  end .row -->
+
+                            </div> <!--  end .about-footer  -->
+
+                        </div> <!--  end .col-md-12  -->
+
+                    </div> <!--  end .row  -->
+
+                    <div class="row">	
+
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+
+                            <div class="footer-widget clearfix">
+
+                                <div class="sidebar-widget-wrapper">
+
+                                    <div class="footer-widget-header clearfix">
+                                        <h3>Support Links</h3>
+                                    </div>  <!--  end .footer-widget-header --> 
+
+
+                                    <ul class="footer-useful-links">
+
+                                        <li>
+                                            <a href="https://medlineplus.gov/ency/article/000587.htm">
+                                                <i class = "fa fa-caret-right fa-footer"></i>
+                                                Thalassemia
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.mayoclinic.org/diseases-conditions/myelofibrosis/symptoms-causes/syc-20355057">
+                                                <i class="fa fa-caret-right fa-footer"></i>
+                                                Cell Elofrosis
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.mayoclinic.org/diseases-conditions/myelodysplastic-syndrome/symptoms-causes/syc-20366977">
+                                                <i class="fa fa-caret-right fa-footer"></i>
+                                                Myelodysasia
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.mayoclinic.org/tests-procedures/complete-blood-count/about/pac-20384919">
+                                                <i class="fa fa-caret-right fa-footer"></i>
+                                                Blood Count
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://en.wikipedia.org/wiki/Hemolytic_anemia">
+                                                <i class="fa fa-caret-right fa-footer"></i>
+                                                Hemolytimia
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.coursehero.com/file/p2heo0q/cells-of-meiosis-I-M-EIOSIS-II-n-n-n-Daughter-cells-of-meiosis-II-Homologous/">
+                                                <i class="fa fa-caret-right fa-footer"></i>
+                                                Ychromas Eosis 
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.medicinenet.com/script/main/art.asp?articlekey=9240">
+                                                <i class="fa fa-caret-right fa-footer"></i>
+                                                Hyrcoagulable
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.mayoclinic.org/diseases-conditions/thrombocytosis/symptoms-causes/syc-20378315">
+                                                <i class="fa fa-caret-right fa-footer" style = "content: \f0da;"></i>
+                                                Thrombo Xtosis
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://www.mayoclinic.org/diseases-conditions/sickle-cell-anemia/symptoms-causes/syc-20355876">
+                                                <i class="fa fa-caret-right fa-footer"></i>
+                                                Sicklenemiaxs
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="https://en.wikipedia.org/wiki/Aplastic_anemia">
+                                                <i class="fa fa-caret-right fa-footer"></i>
+                                                Aplastic Anemia
+                                            </a>
+                                        </li>                                       
+
+                                    </ul>
+
+                                </div> <!--  end .footer-widget  -->        
+
+                            </div> <!--  end .footer-widget  -->            
+
+                        </div> <!--  end .col-md-4 col-sm-12 -->    
+
+                    </div> <!-- end row  -->
+
+                </div> <!-- end .container  -->
+
+            </section> <!--  end .footer-widget-area  -->
+
+            <!--FOOTER CONTENT  -->
+
+            <section class="footer-contents">
+
+                <div class="container">
+
+                    <div class="row clearfix">
+
+                        <div >
+                            <p class="copyright-text" style = "text-align:center"> Copyright © 2019, All Right Reserved - by Aayush Chaudhry </p>
+
+                        </div>  <!-- end .col-sm-6  -->
+
+                        <!-- <div class="col-md-6 col-sm-12 text-right">
+                            <div class="footer-nav">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Causes</a>
+                                        </li>
+                                        <li>
+                                            <a href="donate.html">Events</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-with-sidebar.html">Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a href="campaign-grid.html">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">Contact</a>
+                                        </li>
+                                    </ul>
+                                </nav> -->
+                            <!-- </div>  end .footer-nav  -->
+                        <!-- </div>  end .col-lg-6  -->
+
+                    </div> <!-- end .row  -->                                    
+
+                </div> <!--  end .container  -->
+
+            </section> <!--  end .footer-content  -->
+
+        </footer>
+
+        <!-- END FOOTER  -->
+
+        <!-- Back To Top Button  -->
+
+        <a id="backTop">Back To Top</a>
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/jquery.backTop.min.js' %}"></script>
+        <script src="{% static 'js/waypoints.min.js' %}"></script>
+        <script src="{% static 'js/waypoints-sticky.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+        <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+        <script src="{% static 'js/venobox.min.js' %}"></script>
+        <script src="{% static 'js/custom-scripts.js' %}"></script>
+        
+    </body>
+
+</html>

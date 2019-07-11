@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+        {% block content %}
+        {% load static %}
+        {% csrf_token %}
+        <section class="section-appointment">
+
+            <div class="container wow fadeInUp">
+        
+                    <div class="row" style="padding-top: 50px">
+            
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <h2 class="section-heading"><span>Donor</span> Dashborad</h2>
+                                <p class="section-subheading">Be a part of a noble cause.</p>
+                            </div> <!-- end .col-sm-10  -->                    
+                
+                        </div> <!--  end .row  -->
+        
+                <div class="row">
+        
+                    <div class="col-lg-6 col-md-6 hidden-sm hidden-xs"> 
+        
+                        <figure class="appointment-img">
+                            <img src="{% static 'images/event_4.jpg' %}" alt="appointment image" style="margin-top: 170px">
+                        </figure>
+                    </div> <!--  end col-lg-6  -->
+        
+        
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
+        
+                            <div class="appointment-form-wrapper text-center clearfix">
+                                <h3 class="join-heading">Donor Info</h3>
+                                
+                                      
+                                    <div class="form-group col-md-6">
+                                            <p>
+                                                Name : {{donor.name}}
+        
+                                            </p>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                           <p>
+                                                Date of Birth : {{donor.dob}}
+                                                
+                                            </p>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                     
+                                            <p>
+                                                Gender : {{donor.gender}}
+                                                
+                                            </p>
+                             
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <p>
+                                            Blood Group : {{donor.blood_group}}
+                                            
+                                        </p>
+                                    </div>
+            
+                                    <div class="form-group col-md-6">
+                                        <p>
+                                            Contact Number : {{donor.contact_no}}
+                                            
+                                        </p>
+                                    </div>
+            
+            
+                                    <div class="form-group col-md-6">
+                                        <p>
+                                            Blood Bank : {{donor.blood_bank}}
+                                            
+                                        </p>
+                                    </div>
+            
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <p>
+                                            Address : {{donor.address}}
+                                            
+                                        </p>
+                                    </div>                                                          
+                                    <a style="background: #FE3C47;
+                                    border: 2px solid #FE3C47;
+                                    color: #FFFFFF;
+                                    display: inline-block;
+                                    font-weight: 400;
+                                    padding: 5px 10px;
+                                    position: relative;
+                                    text-transform: uppercase;
+                                    transition: all 0.3s ease-out 0s;" href="{% url 'donor_edit' %}">
+                                        Edit Details
+                                    </a>
+                                    <br>
+                                    <br>
+                                    <a style="background: #FE3C47;
+                                    border: 2px solid #FE3C47;
+                                    color: #FFFFFF;
+                                    display: inline-block;
+                                    font-weight: 400;
+                                    padding: 5px 10px;
+                                    position: relative;
+                                    text-transform: uppercase;
+                                    transition: all 0.3s ease-out 0s;"href="{% url 'logout' %}">
+                                        Logout
+                                    </a>
+                                
+            
+                            </div> <!-- end .appointment-form-wrapper  -->
+            
+                        </div> <!--  end .col-lg-6 -->
+        
+                </div> <!--  end .row  -->
+        
+            </div> <!--  end .container -->
+        
+        </section>  <!--  end .appointment-section  -->
+{% endblock content %}
+

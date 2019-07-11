@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+        {% block content %}
+        {% load static %}
+        <section class="section-content-block section-process" style="padding-top: 30px">
+
+                <div class="container  wow fadeInUp">
+    
+                    <div class="row">
+    
+                        <div class="col-md-12 col-sm-12 text-center" style="padding-bottom: 40px;padding-top: 50px">
+                            <h2 class="section-heading"><span>Blood</span> Banks</h2>
+                            <p class="section-subheading">Search for different Blood Banks and Donors registered there.</p>
+                        </div> <!-- end .col-sm-10  -->                    
+    
+                    </div> <!--  end .row  -->
+                    <div class="row" style="margin-left:320px">
+                        <form method = 'post'class="appoinment-form" action = "{% url 'view_donor_bg' %}" >
+                                    {% csrf_token %}
+                                    <div class="form-group col-md-6">
+                                            <div class="select-style"> 
+                                <select name="Blood Groups" class="form-control" value = "AB+">
+                                <option value="" selected disabled hidden>Choose Blood Group</option>
+                                <option value="all" >All</option>
+                                  <option value="A+">A+</option>
+                                  <option value="A-">A-</option>
+                                  <option value="B+">B+</option>
+                                  <option value="B-">B-</option>
+                                  <option value="AB+">AB+</option>
+                                  <option value="AB-">AB-</option>
+                                  <option value="O+">O+</option>
+                                  <option value="O-">O-</option>
+                                </select>
+                                            </div>
+                                    </div>     
+                                <input class="btn-submit" type="submit">
+                              </form>
+
+                    </div> <!--  end .row  -->
+
+                        <br>
+                        <br>
+                        <div class="row">
+                        <div class="col-lg-6 col-md-6"> 
+
+                                <figure class="appointment-img" style="    padding-top: 200px;">
+                                    <img src="{% static 'images/nsh-gurugram.jpg' %}" alt="appointment image">
+                                </figure>
+                            </div> <!--  end col-lg-6  -->
+                            {% for blood_bank in blood_banks %}
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-right" style = "padding-bottom: 20px">
+                                    <h3 > {{ blood_bank.name }} <h4>{{ blood_bank.city }}<br> {{ blood_bank.contact_no }}<br> {{ blood_bank.address }}</h4></h3>
+                                    <button type="button" class="btn-submit" data-toggle="modal"
+                                    data-target="#{{blood_bank.id}}" style="background: #FE3C47;
+                                    border: 2px solid #FE3C47;
+                                    color: #FFFFFF;
+                                    display: inline-block;
+                                    font-weight: 400;
+                                    padding: 5px 10px;
+                                    position: relative;
+                                    text-transform: uppercase;
+                                    transition: all 0.3s ease-out 0s;"
+                                    value="blood_bank.id">
+                                      View Donors  
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+    
+    
+                </div> <!--  end .container  -->
+    
+            </section> <!--  end .section-process -->
+            {% for blood_bank in blood_banks %}
+            <div class = "modal fade" id="{{blood_bank.id}}">
+                    <div class = "modal-dialog">
+                        <div class = "modal-content" style="border:none">
+                                <div class="appointment-form-wrapper text-center clearfix" style="margin-top:0px">
+                                <h3 class="join-heading">Registered Donors</h3>
+                                {% for donor in donors %}
+                                {%if donor.blood_bank.id == blood_bank.id%}
+                                    <div class="row">
+                                        {{ donor.name }}<br>
+                                        {{ donor.contact_no }}<br>
+                                        {{ donor.address }}<br>
+                                    </div>
+                                    <br>
+                                    <br>
+                                {%endif%}
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        {% endblock content %}
